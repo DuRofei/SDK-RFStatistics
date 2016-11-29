@@ -114,7 +114,7 @@ static NSString *informationCell = @"informationCell";
         return;
     }
     id jsonValue=[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    NSLog(@"jsonValue = %@",jsonValue);
+//    NSLog(@"jsonValue = %@",jsonValue);
     NSMutableArray *array = [NSMutableArray array];
     
     if (self.isSearch) {

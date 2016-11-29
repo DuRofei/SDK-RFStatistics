@@ -268,7 +268,7 @@
 
 #pragma mark - push
 - (void)doPush:(BOOL)animated {
-    _timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+//    _timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
     InformationViewController *informationView=[[InformationViewController alloc]init];
     informationView.title=@"舆情信息";
     UINavigationController *nav1=[[UINavigationController alloc]initWithRootViewController:informationView];

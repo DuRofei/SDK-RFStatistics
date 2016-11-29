@@ -102,7 +102,7 @@ static NSString *earlywarningCellID = @"earlywarningCellID";
     }
     [self performDismiss];
     id jsonValue = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    NSLog(@"jsonValue = %@",jsonValue);
+//    NSLog(@"jsonValue = %@",jsonValue);
     NSMutableArray *array = [NSMutableArray array];
     array = [jsonValue valueForKey:@"result"];
     NSMutableArray *tempArray = [NSMutableArray array];

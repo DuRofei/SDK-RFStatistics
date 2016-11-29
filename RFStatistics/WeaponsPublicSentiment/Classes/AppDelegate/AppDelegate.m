@@ -26,6 +26,10 @@ static SystemSoundID push = 0;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [RFStatistics sharedInstance].analyticsIdentifierBlock = ^(NSString *identifier) {
+        NSLog(@"aop:::%@", identifier);
+    };
+    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
 
     if ([[NSUserDefaults standardUserDefaults] stringForKey:@"状态"] == nil) {

@@ -33,8 +33,8 @@
     }
     
     NSString *url = [HostUrl stringByAppendingString:path];
-    NSLog(@"url =====>>>>>%@",url);
-    NSLog(@"para =====>>>>>%@",para);
+//    NSLog(@"url =====>>>>>%@",url);
+//    NSLog(@"para =====>>>>>%@",para);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager.requestSerializer setTimeoutInterval:10];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];

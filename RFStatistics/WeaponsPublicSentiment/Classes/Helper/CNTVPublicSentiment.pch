@@ -17,6 +17,7 @@
 #import "MJRefresh.h"
 #import "Masonry.h"
 #import "UIView+Massary.h"
+#import "RFStatistics.h"
 
 #define HostUrl @"http://60.205.142.243:8080/pom/app/app-server!"
 
