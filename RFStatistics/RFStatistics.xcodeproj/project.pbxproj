@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7430A6891DFA5D9B0078C353 /* UIView+LXDEventDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430A6881DFA5D9B0078C353 /* UIView+LXDEventDebug.m */; };
+		7430A68C1DFA7AD10078C353 /* UIApplication+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430A68B1DFA7AD10078C353 /* UIApplication+Statistic.m */; };
+		7430A68F1DFA85290078C353 /* UIEvent+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430A68E1DFA85290078C353 /* UIEvent+Statistic.m */; };
+		7430A6921DFA89300078C353 /* UIButton+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430A6911DFA89300078C353 /* UIButton+Statistic.m */; };
+		7430A6951DFA9FD00078C353 /* UILabel+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430A6941DFA9FD00078C353 /* UILabel+Statistic.m */; };
 		74DF57E91DEE6E0800956DB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF57E81DEE6E0800956DB8 /* main.m */; };
 		74DF57EC1DEE6E0800956DB8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF57EB1DEE6E0800956DB8 /* AppDelegate.m */; };
 		74DF57F21DEE6E0800956DB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74DF57F01DEE6E0800956DB8 /* Main.storyboard */; };
@@ -78,6 +83,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7430A6871DFA5D9B0078C353 /* UIView+LXDEventDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LXDEventDebug.h"; sourceTree = "<group>"; };
+		7430A6881DFA5D9B0078C353 /* UIView+LXDEventDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LXDEventDebug.m"; sourceTree = "<group>"; };
+		7430A68A1DFA7AD10078C353 /* UIApplication+Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Statistic.h"; sourceTree = "<group>"; };
+		7430A68B1DFA7AD10078C353 /* UIApplication+Statistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Statistic.m"; sourceTree = "<group>"; };
+		7430A68D1DFA85290078C353 /* UIEvent+Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIEvent+Statistic.h"; sourceTree = "<group>"; };
+		7430A68E1DFA85290078C353 /* UIEvent+Statistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIEvent+Statistic.m"; sourceTree = "<group>"; };
+		7430A6901DFA89300078C353 /* UIButton+Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Statistic.h"; sourceTree = "<group>"; };
+		7430A6911DFA89300078C353 /* UIButton+Statistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Statistic.m"; sourceTree = "<group>"; };
+		7430A6931DFA9FD00078C353 /* UILabel+Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Statistic.h"; sourceTree = "<group>"; };
+		7430A6941DFA9FD00078C353 /* UILabel+Statistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Statistic.m"; sourceTree = "<group>"; };
 		74DF57E41DEE6E0700956DB8 /* RFStatistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RFStatistics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74DF57E81DEE6E0800956DB8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		74DF57EA1DEE6E0800956DB8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -330,6 +345,8 @@
 		74DF58471DEE6FFC00956DB8 /* Categorys */ = {
 			isa = PBXGroup;
 			children = (
+				7430A6871DFA5D9B0078C353 /* UIView+LXDEventDebug.h */,
+				7430A6881DFA5D9B0078C353 /* UIView+LXDEventDebug.m */,
 				74DF58481DEE6FFC00956DB8 /* UIAlertAction+Statistic.h */,
 				74DF58491DEE6FFC00956DB8 /* UIAlertAction+Statistic.m */,
 				74DF584A1DEE6FFC00956DB8 /* UIControl+Statistic.h */,
@@ -344,6 +361,14 @@
 				74DF58C11DEFFC7500956DB8 /* UIApplication+TopMostViewController.m */,
 				74DF58C31DF0027C00956DB8 /* UITextField+Statistic.h */,
 				74DF58C41DF0027C00956DB8 /* UITextField+Statistic.m */,
+				7430A68A1DFA7AD10078C353 /* UIApplication+Statistic.h */,
+				7430A68B1DFA7AD10078C353 /* UIApplication+Statistic.m */,
+				7430A68D1DFA85290078C353 /* UIEvent+Statistic.h */,
+				7430A68E1DFA85290078C353 /* UIEvent+Statistic.m */,
+				7430A6901DFA89300078C353 /* UIButton+Statistic.h */,
+				7430A6911DFA89300078C353 /* UIButton+Statistic.m */,
+				7430A6931DFA9FD00078C353 /* UILabel+Statistic.h */,
+				7430A6941DFA9FD00078C353 /* UILabel+Statistic.m */,
 			);
 			path = Categorys;
 			sourceTree = "<group>";
@@ -598,21 +623,26 @@
 				74DF58731DEE6FFC00956DB8 /* Aspects.m in Sources */,
 				74DF58761DEE6FFC00956DB8 /* UIImage+Statistic.m in Sources */,
 				74DF58751DEE6FFC00956DB8 /* UIControl+Statistic.m in Sources */,
+				7430A68C1DFA7AD10078C353 /* UIApplication+Statistic.m in Sources */,
 				74DF586C1DEE6FFC00956DB8 /* MASViewAttribute.m in Sources */,
 				74DF58711DEE6FFC00956DB8 /* ViewController+MASAdditions.m in Sources */,
 				74DF587F1DEE6FFC00956DB8 /* ThirdViewController.m in Sources */,
 				74DF587D1DEE6FFC00956DB8 /* FourthViewController.m in Sources */,
+				7430A6951DFA9FD00078C353 /* UILabel+Statistic.m in Sources */,
 				74DF58991DEEA14700956DB8 /* RFCycleViewWithFIle.m in Sources */,
 				74DF586A1DEE6FFC00956DB8 /* MASConstraintMaker.m in Sources */,
 				74DF58A51DEEA32900956DB8 /* RFCycleView.m in Sources */,
 				74DF58781DEE6FFC00956DB8 /* UIViewController+Statistic.m in Sources */,
 				74DF58A61DEEA32900956DB8 /* RFCycleViewModel.m in Sources */,
+				7430A6891DFA5D9B0078C353 /* UIView+LXDEventDebug.m in Sources */,
 				74DF586F1DEE6FFC00956DB8 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				74DF58BF1DEFF42400956DB8 /* UserStatistic.m in Sources */,
 				74DF58C51DF0027C00956DB8 /* UITextField+Statistic.m in Sources */,
 				74DF587E1DEE6FFC00956DB8 /* SecondViewController.m in Sources */,
+				7430A6921DFA89300078C353 /* UIButton+Statistic.m in Sources */,
 				74DF587C1DEE6FFC00956DB8 /* FirstViewController.m in Sources */,
 				74DF57EC1DEE6E0800956DB8 /* AppDelegate.m in Sources */,
+				7430A68F1DFA85290078C353 /* UIEvent+Statistic.m in Sources */,
 				74DF58741DEE6FFC00956DB8 /* UIAlertAction+Statistic.m in Sources */,
 				74DF58771DEE6FFC00956DB8 /* UITableView+Statistic.m in Sources */,
 				74DF58681DEE6FFC00956DB8 /* MASCompositeConstraint.m in Sources */,

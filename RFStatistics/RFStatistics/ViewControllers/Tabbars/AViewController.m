@@ -17,6 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
+    
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(50, 100, 100, 100)];
+    imageView.image = [UIImage imageNamed:@"c1.jpg"];
+    [self.view addSubview:imageView];
+    
+    
+    
+    
+    
     // Do any additional setup after loading the view.
 }
 

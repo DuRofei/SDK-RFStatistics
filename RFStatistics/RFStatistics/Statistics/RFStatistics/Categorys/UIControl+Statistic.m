@@ -27,7 +27,37 @@
 {
     [self performUserStastisticsAction:action to:target forEvent:event];
     [self sw_sendAction:action to:target forEvent:event];
+    
+
+//    for(UITouch *touch in event.allTouches) {
+//        [self logTouchInfo:touch];
+//        NSLog(@"touch = %@",touch);
+//    }
+    
+    
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        SEL swizzledSelector = @selector(sw_action);
+//        [Swizzling swizzleWithClass:[self class] originalSelector:action swizzledSelector:swizzledSelector];
+//    });
 }
+
+- (void)sw_action {
+//    NSLog(@"%@",self.)
+}
+
+//- (void)logTouchInfo:(UITouch *)touch {
+//    CGPoint locInSelf = [touch locationInView:self];
+//    CGPoint locInWin = [touch locationInView:nil];
+//    NSLog(@"    touch.locationInView = {%2.3f, %2.3f}", locInSelf.x, locInSelf.y);
+//    NSLog(@"    touch.locationInWin = {%2.3f, %2.3f}", locInWin.x, locInWin.y);
+//    NSLog(@"    touch.phase = %ld", (long)touch.phase);
+//    NSLog(@"    touch.tapCount = %lu", (unsigned long)touch.tapCount);
+//    NSLog(@"    touch.view = %@", touch.view);
+//    UIButton *button = (UIButton *)touch.view;
+//    NSLog(@"button.title = %@",button.currentTitle);
+//    
+//}
 
 
 - (void)performUserStastisticsAction:(SEL)action to:(id)target forEvent:(UIEvent *)event;

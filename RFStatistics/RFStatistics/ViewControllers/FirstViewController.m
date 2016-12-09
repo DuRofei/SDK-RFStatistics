@@ -19,6 +19,8 @@
 @property (nonatomic, strong) NSString *textfieldStr;
 @property (nonatomic, strong) UITextField *textField1;
 @property (nonatomic, strong) UITextField *textField2;
+@property (nonatomic, strong) UIButton *button3;
+
 
 
 
@@ -48,7 +50,9 @@
     
     UILabel *label1 = [[UILabel alloc]init];
     label1.backgroundColor = [UIColor greenColor];
-    label1.text = self.labelStr;
+    label1.text = @"看我是个label哈哈";
+//    label1.userInteractionEnabled = YES;
+
     [self.view addSubview:label1];
     
     [label1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -97,14 +101,14 @@
         make.size.mas_equalTo(CGSizeMake(60, 30));
     }];
     
-    UIButton *button3 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button3 setTitle:@"button3" forState:UIControlStateNormal];
-    button3.backgroundColor = [UIColor redColor];
-    [button3 addTarget:self action:@selector(button3Action) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button3];
+    self.button3 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.button3 setTitle:@"button3" forState:UIControlStateNormal];
+    self.button3.backgroundColor = [UIColor redColor];
+    [self.button3 addTarget:self action:@selector(button3Action) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.button3];
     
     
-    [button3 mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.button3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_offset(100);
         make.left.mas_offset(250);
         make.size.mas_equalTo(CGSizeMake(60, 30));
@@ -145,6 +149,8 @@
 - (void)button3Action{
 //    SecontViewController *secondVC = [[SecontViewController alloc]init];
 //    [self.navigationController pushViewController:secondVC animated:YES];
+    NSString *title = [self.button3 currentTitle];
+//    NSLog(@"button3.title = %@",title);
 }
 
 
@@ -178,8 +184,8 @@
 //    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:selectColor,NSFontAttributeName:[UIFont fontWithName:foneName size:size]} forState:UIControlStateSelected];
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    NSLog(@"作业写完啦");
-}
+//- (void)textFieldDidEndEditing:(UITextField *)textField {
+//    NSLog(@"作业写完啦");
+//}
 
 @end
