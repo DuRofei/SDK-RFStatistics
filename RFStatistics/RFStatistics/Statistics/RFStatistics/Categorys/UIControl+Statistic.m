@@ -10,6 +10,8 @@
 #import "Swizzling.h"
 #import "UserStatistic.h"
 
+@class UITabBarButton;
+
 @implementation UIControl (Statistic)
 
 + (void)load
@@ -25,65 +27,43 @@
 #pragma mark - Method Swizzling
 - (void)sw_sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event
 {
-    [self performUserStastisticsAction:action to:target forEvent:event];
     [self sw_sendAction:action to:target forEvent:event];
-    
 
-//    for(UITouch *touch in event.allTouches) {
-//        [self logTouchInfo:touch];
-//        NSLog(@"touch = %@",touch);
+    for(UITouch *touch in event.allTouches) {
+        [self logTouchInfo:touch];
+    }
+}
+
+
+- (void)logTouchInfo:(UITouch *)touch {
+    CGPoint locInView = [touch locationInView:self];
+    CGPoint locInWin = [touch locationInView:nil];
+
+    NSString *locInViewX = [NSString stringWithFormat:@"%2.3f",locInView.x];
+    NSString *locInViewY = [NSString stringWithFormat:@"%2.3f",locInView.y];
+    NSString *locInWindowX = [NSString stringWithFormat:@"%2.3f",locInWin.x];
+    NSString *locInWindowY = [NSString stringWithFormat:@"%2.3f",locInWin.y];
+    NSString *touchPhase = [NSString stringWithFormat:@"%zi",touch.phase];
+    NSString *touchTapCount = [NSString stringWithFormat:@"%zi",touch.tapCount];
+    NSTimeInterval touchInterval = [[NSDate date]timeIntervalSince1970];
+    NSString *touchTime = [NSString stringWithFormat:@"%f",touchInterval];
+    if ([touch.view isKindOfClass:[UIButton class]]) {
+        UIButton *button = (UIButton *)touch.view;
+        NSDictionary *dic = @{@"touchView":@"Button",
+                              @"buttonTitle":button.currentTitle,
+                              @"touchTime":touchTime,
+                              @"touchTapCount":touchTapCount,
+                              @"touchPhase":touchPhase,
+                              @"locInViewX":locInViewX,
+                              @"locInViewY":locInViewY,
+                              @"locInWindowX":locInWindowX,
+                              @"locInWindowY":locInWindowY};
+        [UserStatistic sendEventToServer:dic];
+    }
+//    else if ([touch.view isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+//        UITabBarButton *tabbar = (UITabBarButton *)touch.view;
+//        NSLog(@"tabbaritem.title = %@",tabbar);
 //    }
-    
-    
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        SEL swizzledSelector = @selector(sw_action);
-//        [Swizzling swizzleWithClass:[self class] originalSelector:action swizzledSelector:swizzledSelector];
-//    });
 }
-
-- (void)sw_action {
-//    NSLog(@"%@",self.)
-}
-
-//- (void)logTouchInfo:(UITouch *)touch {
-//    CGPoint locInSelf = [touch locationInView:self];
-//    CGPoint locInWin = [touch locationInView:nil];
-//    NSLog(@"    touch.locationInView = {%2.3f, %2.3f}", locInSelf.x, locInSelf.y);
-//    NSLog(@"    touch.locationInWin = {%2.3f, %2.3f}", locInWin.x, locInWin.y);
-//    NSLog(@"    touch.phase = %ld", (long)touch.phase);
-//    NSLog(@"    touch.tapCount = %lu", (unsigned long)touch.tapCount);
-//    NSLog(@"    touch.view = %@", touch.view);
-//    UIButton *button = (UIButton *)touch.view;
-//    NSLog(@"button.title = %@",button.currentTitle);
-//    
-//}
-
-
-- (void)performUserStastisticsAction:(SEL)action to:(id)target forEvent:(UIEvent *)event;
-{
-    NSString *eventID = nil;
-    //只统计触摸结束时
-    if ([[[event allTouches] anyObject] phase] == UITouchPhaseEnded)
-    {
-        NSString *actionString = NSStringFromSelector(action);
-        NSString *targetName = NSStringFromClass([target class]);
-        NSDictionary *configDict = [self dictionaryFromUserStatisticsConfigPlist];
-        eventID = configDict[targetName][@"ControlEventIDs"][actionString];
-    }
-    if (eventID != nil)
-    {
-        [UserStatistic sendEventToServer:eventID];
-    }
-}
-
-- (NSDictionary *)dictionaryFromUserStatisticsConfigPlist
-{
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"AllEvents" ofType:@"plist"];
-    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:filePath];
-    return dic;
-}
-
-
 
 @end

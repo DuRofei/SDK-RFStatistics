@@ -13,8 +13,9 @@
 #import "AViewController.h"
 #import "BViewController.h"
 #import "CViewController.h"
+#import "DViewController.h"
 
-@interface FirstViewController ()<UITextFieldDelegate>
+@interface FirstViewController ()<UITextFieldDelegate,UITabBarControllerDelegate>
 @property (nonatomic, strong) NSString *labelStr;
 @property (nonatomic, strong) NSString *textfieldStr;
 @property (nonatomic, strong) UITextField *textField1;
@@ -127,30 +128,46 @@
 - (void)button2Action{
     AViewController *avc = [[AViewController alloc]init];
     UINavigationController *anav = [[UINavigationController alloc]initWithRootViewController:avc];
-    anav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"A" image:nil tag:0];
-    [self setTabBarItem:anav.tabBarItem Title:@"A" withTitleSize:20 andFoneName:@"Marion-Italic" selectedImage:nil withTitleColor:nil unselectedImage:nil withTitleColor:nil];
+    anav.tabBarItem = [[UITabBarItem alloc]initWithTabBarSystemItem:UITabBarSystemItemSearch tag:0];
+//    [self setTabBarItem:anav.tabBarItem Title:@"A" withTitleSize:20 andFoneName:@"Marion-Italic" selectedImage:nil withTitleColor:nil unselectedImage:nil withTitleColor:nil];
     
     BViewController *bvc = [[BViewController alloc]init];
     UINavigationController *bnav = [[UINavigationController alloc]initWithRootViewController:bvc];
-    bnav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"B" image:nil tag:1];
-    [self setTabBarItem:bnav.tabBarItem Title:@"B" withTitleSize:20 andFoneName:@"Marion-Italic" selectedImage:nil withTitleColor:nil unselectedImage:nil withTitleColor:nil];
+    bnav.tabBarItem = [[UITabBarItem alloc]initWithTabBarSystemItem:UITabBarSystemItemMore tag:1];
+//    [self setTabBarItem:bnav.tabBarItem Title:@"B" withTitleSize:20 andFoneName:@"Marion-Italic" selectedImage:nil withTitleColor:nil unselectedImage:nil withTitleColor:nil];
     
     CViewController *cvc = [[CViewController alloc]init];
     UINavigationController *cnav = [[UINavigationController alloc]initWithRootViewController:cvc];
-    cnav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"A" image:nil tag:2];
-    [self setTabBarItem:cnav.tabBarItem Title:@"C" withTitleSize:20 andFoneName:@"Marion-Italic" selectedImage:nil withTitleColor:nil unselectedImage:nil withTitleColor:nil];
+    cnav.tabBarItem = [[UITabBarItem alloc]initWithTabBarSystemItem:UITabBarSystemItemContacts tag:2];
+//    [self setTabBarItem:cnav.tabBarItem Title:@"C" withTitleSize:20 andFoneName:@"Marion-Italic" selectedImage:nil withTitleColor:nil unselectedImage:nil withTitleColor:nil];
+    
+    DViewController *dvc = [[DViewController alloc]init];
+    UINavigationController *dnav = [[UINavigationController alloc]initWithRootViewController:dvc];
+    dnav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"D" image:nil tag:3];
     
     UITabBarController *tabbars = [[UITabBarController alloc]init];
-    [tabbars setViewControllers:@[anav,bnav,cnav]];
+    tabbars.delegate = self;
+    [tabbars setViewControllers:@[anav,bnav,cnav,dnav]];
     
     [self.navigationController pushViewController:tabbars animated:YES];
 }
 
 - (void)button3Action{
-//    SecontViewController *secondVC = [[SecontViewController alloc]init];
-//    [self.navigationController pushViewController:secondVC animated:YES];
-    NSString *title = [self.button3 currentTitle];
-//    NSLog(@"button3.title = %@",title);
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"alert" message:@"controller" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"1" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:action1];
+    [alertController addAction:action2];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
+//    
+////    SecontViewController *secondVC = [[SecontViewController alloc]init];
+////    [self.navigationController pushViewController:secondVC animated:YES];
+//    NSString *title = [self.button3 currentTitle];
+////    NSLog(@"button3.title = %@",title);
 }
 
 
@@ -184,8 +201,13 @@
 //    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:selectColor,NSFontAttributeName:[UIFont fontWithName:foneName size:size]} forState:UIControlStateSelected];
 }
 
-//- (void)textFieldDidEndEditing:(UITextField *)textField {
-//    NSLog(@"作业写完啦");
-//}
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+//    NSLog(@"text = %@",textField.text);
+//    NSLog(@"placeHolder = %@",textField.placeholder);
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    
+}
 
 @end

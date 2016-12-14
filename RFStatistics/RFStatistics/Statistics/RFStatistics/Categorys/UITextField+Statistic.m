@@ -34,23 +34,14 @@ void rf_textFieldDidEndEditing(id self, SEL _cmd, id textField) {
     SEL selector = NSSelectorFromString(@"rf_textFieldDidEndEditing");
     ((void(*)(id, SEL, id))objc_msgSend)(self, selector, textField);
     UITextField *textF = (UITextField *)textField;
-    NSString *idxPathString = [NSString stringWithFormat:@"%@", textF.text];
-    NSMutableString *identifierString = [[NSMutableString alloc] init];
-    if (NSStringFromClass([textField class])) {
-        [identifierString appendString:[NSString stringWithFormat:@"#%@",NSStringFromClass([textField class])]];
-    }
+    NSTimeInterval time = [[NSDate date]timeIntervalSince1970];
+    NSString *eventTime = [NSString stringWithFormat:@"%f",time];
+    NSDictionary *dic = @{@"eventTime":eventTime,
+                          @"placehlder":textF.placeholder,
+                          @"inPutText":textF.text};
+ 
+    [UserStatistic sendEventToServer:dic];
     
-    if (identifierString) {
-        [identifierString appendString:[NSString stringWithFormat:@"#%@",idxPathString]];
-    }
-    if (NSStringFromClass([self class])) {
-        [identifierString appendString:[NSString stringWithFormat:@"#%@",NSStringFromClass([self class])]];
-    }
-    [UserStatistic sendEventToServer:identifierString];
 }
-
-//- (void)rf_textFieldDidEndEditing:(UITextField *)textField  {
-//    
-//}
 
 @end

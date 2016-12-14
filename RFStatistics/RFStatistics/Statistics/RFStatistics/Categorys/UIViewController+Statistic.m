@@ -9,18 +9,25 @@
 #import "UIViewController+Statistic.h"
 #import "Swizzling.h"
 #import "UserStatistic.h"
+@interface UIViewController ()
+//@property (nonatomic) NSTimeInterval enterTime;
+//@property (nonatomic) NSTimeInterval leaveTime;
+
+@end
 
 @implementation UIViewController (Statistic)
+
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        // When swizzling a class method, use the following:
-        // Class class = object_getClass((id)self);
+//        SEL originalSelector_enter = @selector(viewWillAppear:);
+//        SEL swizzledSelector_enter = @selector(sw_viewWillAppear:);
+//        [Swizzling swizzleWithClass:[self class] originalSelector:originalSelector_enter swizzledSelector:swizzledSelector_enter];
         
-        SEL originalSelector_enter = @selector(viewWillAppear:);
-        SEL swizzledSelector_enter = @selector(sw_viewWillAppear:);
-        [Swizzling swizzleWithClass:[self class] originalSelector:originalSelector_enter swizzledSelector:swizzledSelector_enter];
+        SEL originalSelector_enter1 = @selector(viewDidLoad);
+        SEL swizzledSelector_enter1 = @selector(rf_viewDidLoad);
+        [Swizzling swizzleWithClass:[self class] originalSelector:originalSelector_enter1 swizzledSelector:swizzledSelector_enter1];
         
         SEL originalSelector_leave = @selector(viewWillDisappear:);
         SEL swizzledSelector_leave = @selector(sw_viewWillDisappear:);
@@ -37,6 +44,11 @@
     [self sw_viewWillAppear:animated];
 }
 
+- (void)rf_viewDidLoad {
+    [self rf_viewDidLoad];
+    [self inject_viewWillAppear];
+}
+
 - (void)sw_viewWillDisappear:(BOOL)animated
 {
     [self inject_viewWillDisappear];
@@ -46,17 +58,31 @@
 //利用hook 统计所有页面的停留时长
 - (void)inject_viewWillAppear
 {
-    NSString *pageID = [self pageEventID:YES];
+    NSTimeInterval enter = [[NSDate date]timeIntervalSince1970];
+    NSString *enterTime = [NSString stringWithFormat:@"%f",enter];
+    NSString *pageID = @"enter";
+    NSString *controller = [NSString stringWithFormat:@"%@",[self class]];
     if (pageID) {
-        [UserStatistic sendEventToServer:pageID];
+        NSDictionary *dic = @{@"pageID":pageID,
+                              @"pageName":controller,
+                              @"enterTime":enterTime};
+        if (dic) {
+            [UserStatistic sendEventToServer:dic];
+        }
     }
 }
 
 - (void)inject_viewWillDisappear
 {
-    NSString *pageID = [self pageEventID:NO];
+    NSTimeInterval leave = [[NSDate date]timeIntervalSince1970];
+    NSString *leaveTime = [NSString stringWithFormat:@"%f",leave];
+    NSString *pageID = @"leave";
     if (pageID) {
-        [UserStatistic sendEventToServer:pageID];
+        NSDictionary *dic = @{@"pageID":pageID,
+                              @"leaveTime":leaveTime};
+        if (dic) {
+            [UserStatistic sendEventToServer:dic];
+        }
     }
 }
 
@@ -92,4 +118,22 @@
     
     return [presentedViewController topMostViewController];
 }
+
+//- (void)setEnterTime:(NSTimeInterval)enterTime {
+//    objc_setAssociatedObject(self, @selector(enterTime),enterTime, OBJC_ASSOCIATION_COPY_NONATOMIC);
+//
+//}
+//
+//- (NSTimeInterval)enterTime {
+//    return objc_getAssociatedObject(self, @selector(enterTime));
+//}
+//
+//- (void)setLeaveTime:(NSTimeInterval)leaveTime {
+//    
+//}
+//
+//- (NSTimeInterval)leaveTime {
+//    return 0;
+//}
+
 @end

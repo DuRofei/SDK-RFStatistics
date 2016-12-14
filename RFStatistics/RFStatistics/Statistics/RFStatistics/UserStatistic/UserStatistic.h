@@ -18,5 +18,5 @@
 
 + (void)leavePageViewWithPageID:(NSString *)pageID;
 
-+ (void)sendEventToServer:(NSString *)eventId;
++ (void)sendEventToServer:(NSDictionary *)eventId;
 @end

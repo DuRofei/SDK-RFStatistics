@@ -13,6 +13,7 @@
 #import <objc/message.h>
 #import "UIApplication+TopMostViewController.h"
 
+
 @implementation UITableView (Statistic)
 
 + (void)load
@@ -21,6 +22,7 @@
     Method delegateSwizzledMethod = class_getInstanceMethod([self class], @selector(rf_setDelegate:));
     
     method_exchangeImplementations(delegateOriginalMethod, delegateSwizzledMethod);
+
 }
 
 - (void)rf_setDelegate:(id<UITableViewDelegate>)delegate
@@ -39,25 +41,21 @@ void rf_didSelectRowAtIndexPath(id self, SEL _cmd, id tableView, id indexPath)
 {
     SEL selector = NSSelectorFromString(@"rf_didSelectRowAtIndexPath");
     ((void(*)(id, SEL, id, id))objc_msgSend)(self, selector, tableView, indexPath);
+    
     NSIndexPath *indexPath2 = (NSIndexPath *)indexPath;
-    NSString *idxPathString = [NSString stringWithFormat:@"%@-%@", @(indexPath2.section), @(indexPath2.row)];
-    NSMutableString *identifierString = [[NSMutableString alloc] init];
-    if (NSStringFromClass([tableView class])) {
-        [identifierString appendString:NSStringFromClass([tableView class])];
-    }
+    NSString *cellSection = [NSString stringWithFormat:@"%zi",indexPath2.section];
+    NSString *cellRow = [NSString stringWithFormat:@"%zi",indexPath2.row];
+    NSString *controller = NSStringFromClass([self class]);
     
-    if (NSStringFromClass([tableView class])) {
-        [identifierString appendString:[NSString stringWithFormat:@"#%@",NSStringFromClass([tableView class])]];
-    }
+    NSTimeInterval time = [[NSDate date]timeIntervalSince1970];
+    NSString *eventTime = [NSString stringWithFormat:@"%f",time];
     
-    if (idxPathString) {
-        [identifierString appendString:[NSString stringWithFormat:@"#%@",idxPathString]];
-    }
+    NSDictionary *dic = @{@"controller":controller,
+                          @"eventTime":eventTime,
+                          @"cellSection":cellSection,
+                          @"cellRow":cellRow};
     
-    if (NSStringFromClass([self class])) {
-        [identifierString appendString:[NSString stringWithFormat:@"#%@",NSStringFromClass([self class])]];
-    }
-    [UserStatistic sendEventToServer:identifierString];
+    [UserStatistic sendEventToServer:dic];
 }
 
 - (id)displayIdentifier:(id)source
@@ -79,7 +77,6 @@ void rf_didSelectRowAtIndexPath(id self, SEL _cmd, id tableView, id indexPath)
         
         return [self displayIdentifier:gestureSource.view];
     }
-    
     return nil;
 }
 

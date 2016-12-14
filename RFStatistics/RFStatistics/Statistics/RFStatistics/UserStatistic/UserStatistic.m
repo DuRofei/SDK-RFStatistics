@@ -35,9 +35,14 @@
 #pragma mark -- 自定义事件统计部分
 
 
-+ (void)sendEventToServer:(NSString *)eventId
++ (void)sendEventToServer:(NSDictionary *)event
 {
+    
+    
+    if (event[@"eventTime"]) {
+        NSString *eventTime = event[@"eventTime"];
+    }
     //在这里发送event统计信息给服务端
-    NSLog(@"***模拟发送统计事件给服务端，事件ID: %@", eventId);
+    NSLog(@"***模拟发送统计事件给服务端，事件详情: %@", event);
 }
 @end

@@ -12,6 +12,13 @@
 		7430A68F1DFA85290078C353 /* UIEvent+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430A68E1DFA85290078C353 /* UIEvent+Statistic.m */; };
 		7430A6921DFA89300078C353 /* UIButton+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430A6911DFA89300078C353 /* UIButton+Statistic.m */; };
 		7430A6951DFA9FD00078C353 /* UILabel+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430A6941DFA9FD00078C353 /* UILabel+Statistic.m */; };
+		74385CA81DFEA4B50018E02F /* UITabBarController+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 74385CA71DFEA4B50018E02F /* UITabBarController+Statistic.m */; };
+		74385CAB1DFFE2060018E02F /* UITabBarItem+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 74385CAA1DFFE2060018E02F /* UITabBarItem+Statistic.m */; };
+		74385CAE1DFFE6970018E02F /* DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74385CAD1DFFE6970018E02F /* DViewController.m */; };
+		74385CB41DFFF2520018E02F /* SGTopTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74385CB11DFFF2520018E02F /* SGTopTitleView.m */; };
+		74385CB51DFFF2520018E02F /* UIView+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 74385CB31DFFF2520018E02F /* UIView+SGExtension.m */; };
+		74385CB81DFFFB090018E02F /* UIGestureRecognizer+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 74385CB71DFFFB090018E02F /* UIGestureRecognizer+Statistic.m */; };
+		74385CBB1E00EFCB0018E02F /* UITouch+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 74385CBA1E00EFCB0018E02F /* UITouch+Statistic.m */; };
 		74DF57E91DEE6E0800956DB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF57E81DEE6E0800956DB8 /* main.m */; };
 		74DF57EC1DEE6E0800956DB8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF57EB1DEE6E0800956DB8 /* AppDelegate.m */; };
 		74DF57F21DEE6E0800956DB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74DF57F01DEE6E0800956DB8 /* Main.storyboard */; };
@@ -32,7 +39,6 @@
 		74DF58711DEE6FFC00956DB8 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF58401DEE6FFC00956DB8 /* ViewController+MASAdditions.m */; };
 		74DF58721DEE6FFC00956DB8 /* AllEvents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74DF58431DEE6FFC00956DB8 /* AllEvents.plist */; };
 		74DF58731DEE6FFC00956DB8 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF58461DEE6FFC00956DB8 /* Aspects.m */; };
-		74DF58741DEE6FFC00956DB8 /* UIAlertAction+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF58491DEE6FFC00956DB8 /* UIAlertAction+Statistic.m */; };
 		74DF58751DEE6FFC00956DB8 /* UIControl+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF584B1DEE6FFC00956DB8 /* UIControl+Statistic.m */; };
 		74DF58761DEE6FFC00956DB8 /* UIImage+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF584D1DEE6FFC00956DB8 /* UIImage+Statistic.m */; };
 		74DF58771DEE6FFC00956DB8 /* UITableView+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF584F1DEE6FFC00956DB8 /* UITableView+Statistic.m */; };
@@ -93,6 +99,20 @@
 		7430A6911DFA89300078C353 /* UIButton+Statistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Statistic.m"; sourceTree = "<group>"; };
 		7430A6931DFA9FD00078C353 /* UILabel+Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Statistic.h"; sourceTree = "<group>"; };
 		7430A6941DFA9FD00078C353 /* UILabel+Statistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Statistic.m"; sourceTree = "<group>"; };
+		74385CA61DFEA4B50018E02F /* UITabBarController+Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+Statistic.h"; sourceTree = "<group>"; };
+		74385CA71DFEA4B50018E02F /* UITabBarController+Statistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+Statistic.m"; sourceTree = "<group>"; };
+		74385CA91DFFE2060018E02F /* UITabBarItem+Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+Statistic.h"; sourceTree = "<group>"; };
+		74385CAA1DFFE2060018E02F /* UITabBarItem+Statistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+Statistic.m"; sourceTree = "<group>"; };
+		74385CAC1DFFE6970018E02F /* DViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DViewController.h; sourceTree = "<group>"; };
+		74385CAD1DFFE6970018E02F /* DViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DViewController.m; sourceTree = "<group>"; };
+		74385CB01DFFF2520018E02F /* SGTopTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGTopTitleView.h; sourceTree = "<group>"; };
+		74385CB11DFFF2520018E02F /* SGTopTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGTopTitleView.m; sourceTree = "<group>"; };
+		74385CB21DFFF2520018E02F /* UIView+SGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SGExtension.h"; sourceTree = "<group>"; };
+		74385CB31DFFF2520018E02F /* UIView+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SGExtension.m"; sourceTree = "<group>"; };
+		74385CB61DFFFB090018E02F /* UIGestureRecognizer+Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Statistic.h"; sourceTree = "<group>"; };
+		74385CB71DFFFB090018E02F /* UIGestureRecognizer+Statistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Statistic.m"; sourceTree = "<group>"; };
+		74385CB91E00EFCB0018E02F /* UITouch+Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITouch+Statistic.h"; sourceTree = "<group>"; };
+		74385CBA1E00EFCB0018E02F /* UITouch+Statistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITouch+Statistic.m"; sourceTree = "<group>"; };
 		74DF57E41DEE6E0700956DB8 /* RFStatistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RFStatistics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74DF57E81DEE6E0800956DB8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		74DF57EA1DEE6E0800956DB8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -136,8 +156,6 @@
 		74DF58431DEE6FFC00956DB8 /* AllEvents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AllEvents.plist; sourceTree = "<group>"; };
 		74DF58451DEE6FFC00956DB8 /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
 		74DF58461DEE6FFC00956DB8 /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
-		74DF58481DEE6FFC00956DB8 /* UIAlertAction+Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+Statistic.h"; sourceTree = "<group>"; };
-		74DF58491DEE6FFC00956DB8 /* UIAlertAction+Statistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+Statistic.m"; sourceTree = "<group>"; };
 		74DF584A1DEE6FFC00956DB8 /* UIControl+Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+Statistic.h"; sourceTree = "<group>"; };
 		74DF584B1DEE6FFC00956DB8 /* UIControl+Statistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Statistic.m"; sourceTree = "<group>"; };
 		74DF584C1DEE6FFC00956DB8 /* UIImage+Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Statistic.h"; sourceTree = "<group>"; };
@@ -215,6 +233,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74385CAF1DFFF2520018E02F /* SGTopTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				74385CB01DFFF2520018E02F /* SGTopTitleView.h */,
+				74385CB11DFFF2520018E02F /* SGTopTitleView.m */,
+				74385CB21DFFF2520018E02F /* UIView+SGExtension.h */,
+				74385CB31DFFF2520018E02F /* UIView+SGExtension.m */,
+			);
+			path = SGTopTitleView;
+			sourceTree = "<group>";
+		};
 		74DF57DB1DEE6E0700956DB8 = {
 			isa = PBXGroup;
 			children = (
@@ -347,8 +376,6 @@
 			children = (
 				7430A6871DFA5D9B0078C353 /* UIView+LXDEventDebug.h */,
 				7430A6881DFA5D9B0078C353 /* UIView+LXDEventDebug.m */,
-				74DF58481DEE6FFC00956DB8 /* UIAlertAction+Statistic.h */,
-				74DF58491DEE6FFC00956DB8 /* UIAlertAction+Statistic.m */,
 				74DF584A1DEE6FFC00956DB8 /* UIControl+Statistic.h */,
 				74DF584B1DEE6FFC00956DB8 /* UIControl+Statistic.m */,
 				74DF584C1DEE6FFC00956DB8 /* UIImage+Statistic.h */,
@@ -369,6 +396,14 @@
 				7430A6911DFA89300078C353 /* UIButton+Statistic.m */,
 				7430A6931DFA9FD00078C353 /* UILabel+Statistic.h */,
 				7430A6941DFA9FD00078C353 /* UILabel+Statistic.m */,
+				74385CA61DFEA4B50018E02F /* UITabBarController+Statistic.h */,
+				74385CA71DFEA4B50018E02F /* UITabBarController+Statistic.m */,
+				74385CA91DFFE2060018E02F /* UITabBarItem+Statistic.h */,
+				74385CAA1DFFE2060018E02F /* UITabBarItem+Statistic.m */,
+				74385CB61DFFFB090018E02F /* UIGestureRecognizer+Statistic.h */,
+				74385CB71DFFFB090018E02F /* UIGestureRecognizer+Statistic.m */,
+				74385CB91E00EFCB0018E02F /* UITouch+Statistic.h */,
+				74385CBA1E00EFCB0018E02F /* UITouch+Statistic.m */,
 			);
 			path = Categorys;
 			sourceTree = "<group>";
@@ -403,12 +438,15 @@
 		74DF58841DEE7AF200956DB8 /* Tabbars */ = {
 			isa = PBXGroup;
 			children = (
+				74385CAF1DFFF2520018E02F /* SGTopTitleView */,
 				74DF58851DEE7B0100956DB8 /* AViewController.h */,
 				74DF58861DEE7B0100956DB8 /* AViewController.m */,
 				74DF58881DEE7B0800956DB8 /* BViewController.h */,
 				74DF58891DEE7B0800956DB8 /* BViewController.m */,
 				74DF588B1DEE7B1000956DB8 /* CViewController.h */,
 				74DF588C1DEE7B1000956DB8 /* CViewController.m */,
+				74385CAC1DFFE6970018E02F /* DViewController.h */,
+				74385CAD1DFFE6970018E02F /* DViewController.m */,
 			);
 			path = Tabbars;
 			sourceTree = "<group>";
@@ -622,6 +660,7 @@
 				74DF58691DEE6FFC00956DB8 /* MASConstraint.m in Sources */,
 				74DF58731DEE6FFC00956DB8 /* Aspects.m in Sources */,
 				74DF58761DEE6FFC00956DB8 /* UIImage+Statistic.m in Sources */,
+				74385CB51DFFF2520018E02F /* UIView+SGExtension.m in Sources */,
 				74DF58751DEE6FFC00956DB8 /* UIControl+Statistic.m in Sources */,
 				7430A68C1DFA7AD10078C353 /* UIApplication+Statistic.m in Sources */,
 				74DF586C1DEE6FFC00956DB8 /* MASViewAttribute.m in Sources */,
@@ -640,20 +679,25 @@
 				74DF58C51DF0027C00956DB8 /* UITextField+Statistic.m in Sources */,
 				74DF587E1DEE6FFC00956DB8 /* SecondViewController.m in Sources */,
 				7430A6921DFA89300078C353 /* UIButton+Statistic.m in Sources */,
+				74385CA81DFEA4B50018E02F /* UITabBarController+Statistic.m in Sources */,
+				74385CAE1DFFE6970018E02F /* DViewController.m in Sources */,
 				74DF587C1DEE6FFC00956DB8 /* FirstViewController.m in Sources */,
 				74DF57EC1DEE6E0800956DB8 /* AppDelegate.m in Sources */,
 				7430A68F1DFA85290078C353 /* UIEvent+Statistic.m in Sources */,
-				74DF58741DEE6FFC00956DB8 /* UIAlertAction+Statistic.m in Sources */,
 				74DF58771DEE6FFC00956DB8 /* UITableView+Statistic.m in Sources */,
+				74385CB41DFFF2520018E02F /* SGTopTitleView.m in Sources */,
 				74DF58681DEE6FFC00956DB8 /* MASCompositeConstraint.m in Sources */,
 				74DF588D1DEE7B1000956DB8 /* CViewController.m in Sources */,
+				74385CAB1DFFE2060018E02F /* UITabBarItem+Statistic.m in Sources */,
 				74DF58701DEE6FFC00956DB8 /* View+MASAdditions.m in Sources */,
+				74385CB81DFFFB090018E02F /* UIGestureRecognizer+Statistic.m in Sources */,
 				74DF588A1DEE7B0800956DB8 /* BViewController.m in Sources */,
 				74DF58C21DEFFC7500956DB8 /* UIApplication+TopMostViewController.m in Sources */,
 				74DF58A41DEEA32900956DB8 /* RFCycleBaseView.m in Sources */,
 				74DF58791DEE6FFC00956DB8 /* Swizzling.m in Sources */,
 				74DF586E1DEE6FFC00956DB8 /* NSArray+MASAdditions.m in Sources */,
 				74DF586B1DEE6FFC00956DB8 /* MASLayoutConstraint.m in Sources */,
+				74385CBB1E00EFCB0018E02F /* UITouch+Statistic.m in Sources */,
 				74DF58871DEE7B0100956DB8 /* AViewController.m in Sources */,
 				74DF57E91DEE6E0800956DB8 /* main.m in Sources */,
 				74DF586D1DEE6FFC00956DB8 /* MASViewConstraint.m in Sources */,

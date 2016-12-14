@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FourthViewController : UIViewController
+@property (nonatomic, strong) NSString *viewID;
+
 
 @end
