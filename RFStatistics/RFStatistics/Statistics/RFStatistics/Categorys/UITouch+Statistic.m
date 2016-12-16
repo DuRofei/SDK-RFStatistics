@@ -57,6 +57,7 @@
             if (view.subviews[0].subviews[0]) {
                 if ([view.subviews[0].subviews[0] isKindOfClass:[UILabel class]]) {
                     UILabel *label = (UILabel *)view.subviews[0].subviews[0];
+                    NSLog(@"label.superview = %@",label.superview.superview.superview.superview);
                     NSString *actionTitle = label.text;
                     [mDic setObject:@"UIAlertController" forKey:@"touchView"];
                     [mDic setObject:actionTitle forKey:@"actionTitle"];

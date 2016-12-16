@@ -66,7 +66,7 @@
     self.textField1.placeholder = @"请输入文字";
     self.textField1.layer.borderWidth = 1;
     self.textfieldStr = self.textField1.text;
-    self.textField1.delegate = self;
+//    self.textField1.delegate = self;
     [self.view addSubview:self.textField1];
     
     [self.textField1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -153,13 +153,19 @@
 }
 
 - (void)button3Action{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"alert" message:@"controller" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"1" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"登录" message:@"请输入帐号密码" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
     }];
     UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:nil];
     [alertController addAction:action1];
     [alertController addAction:action2];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入帐号";
+    }];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入密码";
+    }];
     [self presentViewController:alertController animated:YES completion:nil];
     
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		740999D31E03CA20000575E7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740999D21E03CA20000575E7 /* Realm.framework */; };
 		7430A6891DFA5D9B0078C353 /* UIView+LXDEventDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430A6881DFA5D9B0078C353 /* UIView+LXDEventDebug.m */; };
 		7430A68C1DFA7AD10078C353 /* UIApplication+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430A68B1DFA7AD10078C353 /* UIApplication+Statistic.m */; };
 		7430A68F1DFA85290078C353 /* UIEvent+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430A68E1DFA85290078C353 /* UIEvent+Statistic.m */; };
@@ -69,6 +70,8 @@
 		74DF58BF1DEFF42400956DB8 /* UserStatistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF58BE1DEFF42400956DB8 /* UserStatistic.m */; };
 		74DF58C21DEFFC7500956DB8 /* UIApplication+TopMostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF58C11DEFFC7500956DB8 /* UIApplication+TopMostViewController.m */; };
 		74DF58C51DF0027C00956DB8 /* UITextField+Statistic.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DF58C41DF0027C00956DB8 /* UITextField+Statistic.m */; };
+		74F7AE931E03E9A90089166F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F7AE921E03E9A90089166F /* libc++.tbd */; };
+		74F7AE961E03EACB0089166F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F7AE951E03EACB0089166F /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		740999D21E03CA20000575E7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = RFStatistics/Realm.framework; sourceTree = "<group>"; };
 		7430A6871DFA5D9B0078C353 /* UIView+LXDEventDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LXDEventDebug.h"; sourceTree = "<group>"; };
 		7430A6881DFA5D9B0078C353 /* UIView+LXDEventDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LXDEventDebug.m"; sourceTree = "<group>"; };
 		7430A68A1DFA7AD10078C353 /* UIApplication+Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Statistic.h"; sourceTree = "<group>"; };
@@ -206,6 +210,9 @@
 		74DF58C11DEFFC7500956DB8 /* UIApplication+TopMostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+TopMostViewController.m"; sourceTree = "<group>"; };
 		74DF58C31DF0027C00956DB8 /* UITextField+Statistic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Statistic.h"; sourceTree = "<group>"; };
 		74DF58C41DF0027C00956DB8 /* UITextField+Statistic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Statistic.m"; sourceTree = "<group>"; };
+		74F7AE921E03E9A90089166F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		74F7AE941E03EACB0089166F /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		74F7AE951E03EACB0089166F /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +220,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74F7AE931E03E9A90089166F /* libc++.tbd in Frameworks */,
+				740999D31E03CA20000575E7 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +242,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		740999D41E03D7B0000575E7 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				74F7AE941E03EACB0089166F /* Person.h */,
+				74F7AE951E03EACB0089166F /* Person.m */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		74385CAF1DFFF2520018E02F /* SGTopTitleView */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +269,7 @@
 				74DF58001DEE6E0800956DB8 /* RFStatisticsTests */,
 				74DF580B1DEE6E0800956DB8 /* RFStatisticsUITests */,
 				74DF57E51DEE6E0700956DB8 /* Products */,
+				74F7AE911E03E9A80089166F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -267,6 +286,7 @@
 		74DF57E61DEE6E0700956DB8 /* RFStatistics */ = {
 			isa = PBXGroup;
 			children = (
+				740999D41E03D7B0000575E7 /* Realm */,
 				74DF58A71DEEA41000956DB8 /* Images */,
 				74DF588E1DEEA14700956DB8 /* RFCycleView */,
 				74DF58261DEE6FFC00956DB8 /* Masonry */,
@@ -508,6 +528,15 @@
 			path = UserStatistic;
 			sourceTree = "<group>";
 		};
+		74F7AE911E03E9A80089166F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				740999D21E03CA20000575E7 /* Realm.framework */,
+				74F7AE921E03E9A90089166F /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -674,6 +703,7 @@
 				74DF58781DEE6FFC00956DB8 /* UIViewController+Statistic.m in Sources */,
 				74DF58A61DEEA32900956DB8 /* RFCycleViewModel.m in Sources */,
 				7430A6891DFA5D9B0078C353 /* UIView+LXDEventDebug.m in Sources */,
+				74F7AE961E03EACB0089166F /* Person.m in Sources */,
 				74DF586F1DEE6FFC00956DB8 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				74DF58BF1DEFF42400956DB8 /* UserStatistic.m in Sources */,
 				74DF58C51DF0027C00956DB8 /* UITextField+Statistic.m in Sources */,
@@ -850,6 +880,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DR73UB2U9G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RFStatistics",
+				);
 				INFOPLIST_FILE = RFStatistics/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -863,6 +897,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DR73UB2U9G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RFStatistics",
+				);
 				INFOPLIST_FILE = RFStatistics/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

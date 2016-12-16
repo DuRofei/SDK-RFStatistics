@@ -61,13 +61,29 @@
     NSTimeInterval enter = [[NSDate date]timeIntervalSince1970];
     NSString *enterTime = [NSString stringWithFormat:@"%f",enter];
     NSString *pageID = @"enter";
+    if ([self isKindOfClass:[UIAlertController class]]) {
+        NSLog(@"controller = %@",[self class]);
+    }
     NSString *controller = [NSString stringWithFormat:@"%@",[self class]];
     if (pageID) {
-        NSDictionary *dic = @{@"pageID":pageID,
-                              @"pageName":controller,
-                              @"enterTime":enterTime};
-        if (dic) {
-            [UserStatistic sendEventToServer:dic];
+        if ([self isKindOfClass:[UIAlertController class]]) {
+            NSLog(@"controller = %@",[self class]);
+            UIAlertController *alertC = (UIAlertController *)self;
+            NSDictionary *dic = @{@"pageID":pageID,
+                                  @"pageName":controller,
+                                  @"alertTitle":alertC.title,
+                                  @"alertMessage":alertC.message,
+                                  @"enterTime":enterTime};
+            if (dic) {
+                [UserStatistic sendEventToServer:dic];
+            }
+        } else {
+            NSDictionary *dic = @{@"pageID":pageID,
+                                  @"pageName":controller,
+                                  @"enterTime":enterTime};
+            if (dic) {
+                [UserStatistic sendEventToServer:dic];
+            }
         }
     }
 }

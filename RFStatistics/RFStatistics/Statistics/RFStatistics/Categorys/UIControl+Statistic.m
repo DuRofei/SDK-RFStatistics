@@ -38,6 +38,9 @@
 - (void)logTouchInfo:(UITouch *)touch {
     CGPoint locInView = [touch locationInView:self];
     CGPoint locInWin = [touch locationInView:nil];
+    
+    NSLog(@"touch = %@",touch);
+    
 
     NSString *locInViewX = [NSString stringWithFormat:@"%2.3f",locInView.x];
     NSString *locInViewY = [NSString stringWithFormat:@"%2.3f",locInView.y];
@@ -59,6 +62,9 @@
                               @"locInWindowX":locInWindowX,
                               @"locInWindowY":locInWindowY};
         [UserStatistic sendEventToServer:dic];
+    } else if ([touch.view isKindOfClass:[UITextField class]]) {
+        UITextField *textField = (UITextField *)touch.view;
+        NSLog(@"textfield.text = %@",textField.text);
     }
 //    else if ([touch.view isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
 //        UITabBarButton *tabbar = (UITabBarButton *)touch.view;
