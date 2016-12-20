@@ -14,6 +14,7 @@
 #import "BViewController.h"
 #import "CViewController.h"
 #import "DViewController.h"
+#import "FifthViewController.h"
 
 @interface FirstViewController ()<UITextFieldDelegate,UITabBarControllerDelegate>
 @property (nonatomic, strong) NSString *labelStr;
@@ -115,6 +116,19 @@
         make.size.mas_equalTo(CGSizeMake(60, 30));
     }];
     
+    UIButton *button4 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button4 setTitle:@"button4" forState:UIControlStateNormal];
+    button4.backgroundColor = [UIColor redColor];
+    [button4 addTarget:self action:@selector(button4Action) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button4];
+    
+    
+    [button4 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_offset(150);
+        make.left.mas_offset(250);
+        make.size.mas_equalTo(CGSizeMake(60, 30));
+    }];
+    
 
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -174,6 +188,12 @@
 ////    [self.navigationController pushViewController:secondVC animated:YES];
 //    NSString *title = [self.button3 currentTitle];
 ////    NSLog(@"button3.title = %@",title);
+}
+
+- (void)button4Action {
+    FifthViewController *fifthVc = [[FifthViewController alloc]init];
+//    UINavigationController *navCC = [[UINavigationController alloc]initWithRootViewController:fifthVc];
+    [self.navigationController pushViewController:fifthVc animated:YES];
 }
 
 

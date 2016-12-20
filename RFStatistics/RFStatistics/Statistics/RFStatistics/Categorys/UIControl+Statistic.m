@@ -53,7 +53,7 @@
     if ([touch.view isKindOfClass:[UIButton class]]) {
         UIButton *button = (UIButton *)touch.view;
         NSDictionary *dic = @{@"touchView":@"Button",
-                              @"buttonTitle":button.currentTitle,
+                              @"buttonTitle":button.currentTitle ? button.currentTitle : @"noTitle",
                               @"touchTime":touchTime,
                               @"touchTapCount":touchTapCount,
                               @"touchPhase":touchPhase,
